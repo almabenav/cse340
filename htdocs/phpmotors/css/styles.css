@@ -1,0 +1,533 @@
+*{box-sizing: border-box;} 
+
+:root {
+
+    /* fonts */
+    --font-body: 'Josefin Sans', sans-serif;
+    /* colors */
+    --light-gray: #BABABA;
+    --gray: #8D8D8D;
+    --light-blue: #A6CBEB;
+    --dark-blue: #4B95D5;
+    --dark-gray: #3A3A3A;
+    --white: #FFFFFF;
+
+}
+body{
+    background-color: white;
+    margin: 0;
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 15px;
+}
+header, footer {background-color: white;}
+main {padding: 0.5rem;}
+
+/* ------------- HEADER ------------- */
+
+#top-header{
+    display: flex;
+    padding: .5rem;
+    justify-content: space-between;
+}
+#logo{
+    grid-row: 1;
+}
+#top-header a{
+    width: auto;
+    grid-row: 1;
+    color: var(--dark-gray);
+    text-decoration: none;
+}
+
+.name-logout{
+    grid-row: 1;   
+    margin-top: 13px;
+}
+
+#top-header a:hover{
+color: var(--dark-blue);
+}
+
+/* ------------- nav ------------- */
+nav {
+    background-color: var(--dark-gray);
+}
+nav ul{
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul li a {
+    display: block;
+    color: var(--white);
+    text-decoration: none;
+	padding: 1rem 0;
+    text-align: center;
+    margin: 0px .7rem;
+}
+nav ul li a:hover {
+    background-color: var(--dark-blue);
+    color: black;
+}
+
+/* ------------- FOOTER ------------- */
+footer{
+    text-align: center;
+}
+footer p{ margin: 0; padding: 15px;}
+.separator {
+    border-top: 5px solid var(--dark-gray);
+    margin-top: 2%;
+  }
+/* ------------- HOME ------------- */
+
+.home-main h1, .home-main h2{
+    font-size: 20px;
+}
+
+.hero{
+    width: 100%;
+    height: 300px;
+    display: grid;
+    grid-template-columns:30% 40% 30%;
+    grid-template-rows: 70% 30%;
+    grid-template-areas: 
+    "hero-txt hero-txt hero-txt"
+    ". hero-btn .";
+}
+
+.hero-img{
+    width: 100%;
+    background-image: url('../images/car.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+	background-position: center;
+    margin: 0;
+    padding: 0%;
+    grid-area: hero-txt;
+}
+.hero-txt{width: 130px;}
+.hero-txt h2, .hero-txt p{
+    margin: 0;
+    padding: 0%;
+    font-size: 13.5px;
+    color: var(--dark-blue);
+}
+.blue-btn{
+    margin: auto;
+    color: black;
+    width: 40%;
+    padding: 16px;
+    text-align: center;
+    background-color: var(--dark-blue);
+    border: .3px solid var(--dark-gray);
+    text-decoration: none;
+}
+.hero-btn{
+    width: 160px;
+    text-align: center;
+    grid-area: hero-btn;
+}
+
+.reviews-home ul li{
+    padding: .5rem;
+}
+
+div.upgrades-cards{
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-rows: repeat(2, 50%); 
+    grid-template-areas: 
+    " flux flam"
+    "bumper hub";
+    gap: 7% 2%;
+}
+
+.flux-capacitor, .flam-decals,
+.bumper-stickers,.hub-caps {
+    text-align: center;
+}
+.flux-img, .flam-img ,
+.bumper-img ,.hub-img{
+    width: 100% ;
+    max-height: 75%;
+    min-height: 75%;
+    margin: 1%;
+    background-color: var(--dark-blue);
+    border: .2px solid var(--dark-gray);
+}
+
+.flux-capacitor{grid-area: flux;}
+.flam-decals{grid-area: flam;}
+.bumper-stickers{grid-area: bumper;}
+.hub-caps{grid-area: hub;}
+
+.flux-img img ,.flam-img img, 
+.bumper-img img ,.hub-img img{
+    margin: auto;
+    width: 100%;
+    max-width: 140px;
+    min-width: 140px;
+    max-height: 60px;
+    min-height: 60px;
+    padding: 0px 40px;
+}
+
+/* ------------- LOGIN ------------- */
+fieldset{
+    width: 100%;
+    border-radius: 4px;
+}
+legend{
+    color: var(--dark-blue);
+}
+input, form option, .review-form, .update-review-form {
+  font-size: 13px;
+  width: 100%;
+  padding: 10px;
+  margin: 2%;
+  border-radius: 4px;
+  border: 1px solid var(--light-gray);
+}
+button.form-btn{width: 100%; border-radius: 4px; padding: 2%; margin-top: 2%;}
+
+form label.top input:required {
+    border-left: rgb(247, 187, 187) solid 6px;
+}
+form label.top input:required:valid {
+    border-left: rgb(202, 252, 202) solid 6px;
+}
+/* ------------- REGISTRATION ------------- */
+a.registration-link{display: block; margin-top: 2%;}
+
+
+.add-vehicle-form {
+    margin-bottom: 3%;
+}
+
+.notice-red {
+    color: rgb(164, 0, 0)
+}
+.notice-green {
+    color: rgb(2, 124, 6)
+}
+
+/* ------------- VEHICLES DISPLAY ------------- */
+
+ul#inv-display {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: start;
+    padding: 0px;
+    margin: 0;
+}
+
+li.display-info a {
+    color: black; 
+    text-decoration: none;
+}
+
+li.display-info {
+    width: auto;
+    margin: 15px;
+    list-style: none;
+    border: 2px solid var(--light-gray);
+    text-align: center;
+    text-decoration: none;
+}
+
+.car-img {
+    width: 200px;
+    height: 96px;
+    margin: 1rem;
+}
+
+
+   /* ------------- VEHICLES DETAILS DISPLAY ------------- */
+
+   .image-details img{
+    width: 100%;
+    max-width: 500px;
+    margin: 0px;
+    }
+   .price, .color {
+        background-color: #eaeaea;
+    }
+    .infoColumn p, .infoColumn h3 {
+        padding: 0.8rem;
+    }
+
+    .thumbImages {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex; 
+    }
+    
+    .thumbImages-small img {
+        margin-right: 0.5rem;
+    }
+    .thumbImages-large {
+        display: none; /* Ocultar las miniaturas abajo */
+    }
+
+    .review-form, .update-review-form {
+        display: grid;
+        margin-left: 0;
+    }
+    .reviewText {
+        width: 100%;
+        height: 100%;
+    }
+    .review-btn {
+        width: 100%;
+        padding: 0.5rem;
+        margin: 20px 0 0 0;
+    }
+
+    .reviews {
+        margin: 0;
+        padding: 0;
+
+    }
+    .reviews li {
+        list-style: none;
+        background-color: #F6F091;
+        padding: 2%;
+        margin-bottom: 2%;
+
+    }
+    .reviews p {
+        background-color: #FFFFFF;
+        padding: 2%;
+        margin: 0;
+    }
+    .screenName, .message{
+        font-weight: bold;    
+    }
+
+
+   /* ------------- VEHICLES IMAGES UPLOAD ------------- */
+
+
+   .upload-form * {
+    margin: 0.5rem 0;
+}
+
+   .upload-form fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.upload-form legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.upload-form .radio-buttons label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+ul#image-display{
+    width: auto;
+    display:flex;
+    flex-flow: row wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+   }
+
+img.images-upload{
+    width: 100%;
+    padding: 2rem;
+   }
+
+   /* ------------- REVIEW UPDATE AND DELETE ------------- */
+
+.reviewTextField {
+    width: 100%;
+    height: 100%;
+   }
+p.reviews-delete-text {
+    background-color: #F6F091;
+    }
+
+
+@media only screen and (min-width: 63rem) {
+
+    .home-main h1{font-size: 30px;}
+    body {margin-top: 4%;}
+
+    html{
+        background-image: url('../images/checkerboard.jpg');
+        background-position: center;
+        border-radius: 5px;
+        border: 5px solid var(--dark-blue);
+        margin: 1% 10%;
+    }
+    
+    .hero{
+        background-image: url('../images/car.jpeg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 600px;
+        display: grid;
+        grid-template-columns:25% 25% 25% 25%;
+        grid-template-rows: 100%;
+    }
+
+    .hero-img{
+        background-image: none;
+        margin: 0;
+        padding: 0%;
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .hero-txt{width: 200px; margin: 0% 0% 10% 15%;}
+    .hero-txt h2, .hero-txt p{
+        margin: 0;
+        padding: 0%;
+        font-size: 25px;
+        color: var(--dark-blue);
+    }
+
+    .blue-btn{width: 65%;}
+
+    .hero-btn{
+        /* margin: 5% auto auto auto; */
+        margin: 150px auto auto 15%;
+        padding: 5%;
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .container {
+        width: 100%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-areas: 
+        "upgrades reviews";
+    }
+
+    .reviews{grid-area: reviews; margin: 0 auto;}
+    .upgrades{grid-area: upgrades; }
+
+    .flux-img, .flam-img ,.bumper-img ,.hub-img{
+        max-height: 70%;
+    }
+
+    fieldset{
+        width: 50%;
+        border-radius: 4px;
+    }
+
+    button.form-btn{width: 50%; padding: 1%;}
+
+    /* For vehicle display in classification view */
+
+    ul#inv-display {
+        width: 100%;
+        flex-flow: row wrap;
+        text-align: center;
+        justify-content: start;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    li.display-info {
+        max-width: 250px;
+        margin: 15px 0px 15px 15px;
+        list-style: none;
+        border: 2px solid var(--light-gray);
+        text-align: center;
+    }
+
+    .car-img {
+        width: 200px;
+        height: 96px;
+        margin: 1rem;
+    }
+
+    .details-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    .infoColumn p, .infoColumn h3 {
+        margin: 15px;
+    }
+
+    .imgColumn {
+        display: flex;
+
+    }
+
+    .thumbImages-title{display: none;}
+    .thumbImages img {
+        width: 100%;
+    }
+
+    .thumbImages{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .thumbImages-div {
+        width: 100%;
+        margin: 0;
+    } 
+
+    .thumbImages-large {
+        display: block;
+        width: 20%;
+    }
+
+    .image-details {
+        width: 80%;
+        margin-left: 0.5rem;
+    }
+    
+    .thumbImages-small {
+        display: none;
+    }
+
+    .thumbImages-div img{
+        transition: transform 0.3s;
+    }
+
+    .thumbImages-div img:hover{
+        transform: scale(2.7);    
+    }
+
+    img.images-upload{
+        width: 200px;
+        height: 110px;
+        margin: 1rem;
+        padding: 0;
+    }
+
+    .screenNameField {
+        width: 20%;
+    }
+    .reviewTextField {
+        width: 50%;
+        height: 100%;
+       }
+    .review-btn {
+        width: 20%;
+    }
+
+}
