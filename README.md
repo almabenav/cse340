@@ -2,7 +2,6 @@
 
 This repository contains project "PHP Motors" developed during the  
 "CSE340 Web Backend Development" SP23 course at Brigham Young University–Idaho.  
-**Link:** 
 
 ## Technologies Used
 PHP  
